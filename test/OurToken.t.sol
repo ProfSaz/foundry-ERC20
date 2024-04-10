@@ -24,9 +24,32 @@ contract OurTokenTest is Test {
        ourToken.transfer(bob, STARTING_BALANCE);
     }
 
-    function testBobBalance() external {
+    function testBobBalance() view external {
         assertEq(STARTING_BALANCE, ourToken.balanceOf(bob));
         console.log(ourToken.balanceOf(msg.sender));
         console.log(ourToken.balanceOf(bob));
+    }
+
+    function testTransfer() external {
+        uint256 transferAmount = 5 ether;
+        vm.prank(bob);
+        ourToken.transfer(alice, transferAmount);
+        assertEq(ourToken.balanceOf(alice), transferAmount);
+        assertEq(ourToken.balanceOf(bob), STARTING_BALANCE - transferAmount);
+
+    }
+
+    function testTransferFromWorks() external {
+        uint256  initialAmount = 10 ether ;
+
+        vm.prank(bob);
+        ourToken.approve(alice, initialAmount);
+        
+        uint256 transferAmount = 5 ether ;
+        vm.prank(alice);
+        ourToken.transferFrom(bob, alice, transferAmount);
+
+        assertEq(ourToken.balanceOf(bob), STARTING_BALANCE - transferAmount);
+        assertEq(ourToken.balanceOf(alice), transferAmount);
     }
 }
