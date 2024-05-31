@@ -25,7 +25,7 @@ To get started, clone the repository and install the dependencies.
 
 ```bash
 # Clone the repository
-git clone https://github.com/ProfSaz/foundryfundme.git
+git clone https://github.com/ProfSaz/foundryERC20.git
 
 # Navigate to the project directory
 cd foundryfundme
