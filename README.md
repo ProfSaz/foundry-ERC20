@@ -28,7 +28,7 @@ To get started, clone the repository and install the dependencies.
 git clone https://github.com/ProfSaz/foundryERC20.git
 
 # Navigate to the project directory
-cd foundryfundme
+cd foundryERC20
 
 # Install Foundry
 curl -L https://foundry.paradigm.xyz | bash
@@ -44,15 +44,11 @@ forge install
 
 ```bash
 
-forge script script/DeployFundMe.s.sol
+forge script script/DeployOurToken.s.sol
 
 ```
 
 ### Test
-
-We tested accross 2 test tiers.
-    1. Unit
-    2. Integration 
 
 To run a general test for this project use the following command 
 
