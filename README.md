@@ -1,6 +1,6 @@
-# FundMe Contract
+# Foundry ERC20 Contract
 
-A sample funding contract that allows users to fund the contract based on the ETH/USD price feed. This project uses Foundry for development and testing.
+This is a simple ERC20 token smart contract developed using Foundry. This contract allows anyone to deploy a basic ERC20 token with a specified total supply.
 
 ## Table of Contents
 
