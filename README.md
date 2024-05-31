@@ -89,9 +89,9 @@ ETHERSCAN_API_KEY=XXXX
 
 ## Features
 
-- Fund the Contract: Users can fund the contract based on the ETH/USD price feed.
-- Withdraw Funds: Only the owner can withdraw all the funds from the contract.
-- Cheaper Withdraw: An optimized method for withdrawing funds.
+- ERC20 compliant token with symbol `OT` and name `OurToken`
+- Initial supply of tokens minted to the deployer's address
+- Built using OpenZeppelin's well audited contracts 
 
 ## Deploying to a Testnet or Mainnet 
 
@@ -112,7 +112,7 @@ Head over to [faucets.chain.link](https://faucets.chain.link/) and get some test
 3. Deploy
 
 ```bash 
-forge script script/DeployFundMe.s.sol --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --etherscan-api-key $ETHERSCAN_API_KEY
+forge script script/DeployOurToken.s.sol --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --etherscan-api-key $ETHERSCAN_API_KEY
 
 ```
 
@@ -120,21 +120,12 @@ forge script script/DeployFundMe.s.sol --rpc-url $SEPOLIA_RPC_URL --private-key 
 
 After deploying to a testnet or local net, you can interact with the contract either by using `cast` or by using the the scripts 
 
-### Funding
-``` bash
-cast send <FUNDME_CONTRACT_ADDRESS> "fund()" --value 0.01ether --private-key <PRIVATE_KEY>
-```
-
-or
-```bash 
-forge script script/Interactions.s.sol:FundFundMe --rpc-url sepolia  --private-key $PRIVATE_KEY  --broadcast
-forge script script/Interactions.s.sol:WithdrawFundMe --rpc-url sepolia  --private-key $PRIVATE_KEY  --broadcast
-```
-
-### Withdraw
+Using cast deployed locally example 
 
 ```bash 
-cast send <FUNDME_CONTRACT_ADDRESS> "withdraw()"  --private-key <PRIVATE_KEY>
+
+cast send <ERC20_CONTRACT_ADDRESS> "transfer()" --value 0.01ether --private-key <PRIVATE_KEY> --rpc-url $SEPOLIA_RPC_URL
+
 ```
 
 ## Estimate gas
