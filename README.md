@@ -13,8 +13,6 @@ A sample funding contract that allows users to fund the contract based on the ET
 4. [Features](#features)
 5. [Deploying to a testnet or mainnet](#deploying-to-a-testnet-or-mainnet)
 6. [Interactions](#interactions)
-    - [Funding](#funding)
-    - [Withdraw](#withdraw)
 7. [Estimate Gas](#estimate-gas)
 8. [Formatting](#formatting)
 9. [Contact](#contact)
